@@ -1,0 +1,49 @@
+Sample Hints
+
+Hint1.jpg
+
+1)    How are letters represented in a computer? (Hint: find out what chr and ord do)
+2)    On what date (the day number) did Beyoncé release the YouTube video for Halo?
+3)    Using a trick called a Caesar Cipher, I hid a message in the QR code.  I converted each letter to a number, shifted it up by the number you found in the previous step, and converted it back to a letter.  Can you decode what I wrote?
+
+This is the first part of the message.  The other QR codes have the other parts, feel free to help debug those until all are solved: kwwsv=22jlwkxe1frp2Wh
+
+Hint2.jpg
+
+1)    If you have a string (a collection of text) in Python, how do you find the location of a particular letter?
+2)    What part of a flower produces pollen?
+3)    Using a trick called a Substitution Cipher, I hid a message in the QR code.  For some of the letters in my string, I swapped them with other letters.  I chose my letters my pairing up the letters in the word you found in the previous step.  For example, if the word was “Pirate”, then I would have paired up the P-i, r-a, t-e.  So I would take every P and substitute it with a I, every I and substitute it with a p, and so on.  Can you find out what I hid? (NOTE: the case of the letter does not matter.  In the above example, I would substitute both uppercase P and lowercase P with i).
+
+This is the second part of the message.  The other QR codes have the other parts, feel free to help debug those until all are solved: keowlndgn/Curriculua/
+
+Hint3.jpg
+
+1)    In Python, how do you reverse a string?
+2)    On what date (the day number) was Captain America: Civil War released in the US?
+3)    I took some number of letters from the beginning of the message and removed them.  I then reversed those letters, and inserted them at the end.  (For example, if I was starting with “supercalifragilisticexpialidocious” and the number was 5, it would become “califragilisticexpialidociousrepus”).  Can you decode my message below?
+
+This is the third part of the message.  The other QR codes have the other parts, feel free to help debug those until all are solved: aster/Week%205%m/bolb
+
+Hint4.jpg
+
+1)    If you have a string (a collection of text) in Python, how do you find the location of a particular letter?
+2)    What is the first name of the founder of Carnegie Mellon University?
+3)    Using a trick called a Substitution Cipher, I hid a message in the QR code.  For some of the letters in my string, I swapped them with other letters.  I chose my letters my pairing up the letters in the word you found in the previous step.  For example, if the word was “Pirate”, then I would have paired up the P-i, r-a, t-e.  So I would take every P and substitute it with a I, every I and substitute it with a p, and so on.  Can you find out what I hid? (NOTE: the case of the letter does not matter.  In the above example, I would substitute both uppercase P and lowercase P with i).
+
+This is the fourth part of the message.  The other QR codes have the other parts, feel free to help debug those until all are solved: 20Rntn%20Dwpdwswatnti
+
+Hint5.py
+
+1)    In Python, how do you reverse a string?
+2)    How old was President Obama’s younger daughter when he first got elected president (in November 2008)?
+3)    I took some number of letters from the beginning of the message and removed them.  I then reversed those letters, and inserted them at the end.  (For example, if I was starting with “supercalifragilisticexpialidocious” and the number was 5, it would become “califragilisticexpialidociousrepus”).  Can you decode my message below?
+
+This is the fifth part of the message.  The other QR codes have the other parts, feel free to help debug those until all are solved: er%20Mystery%2druM/no
+
+Hint6.py
+
+1)    How are letters represented in a computer? (Hint: find out what chr and ord do)
+2)    What date (the day number) is George W. Bush’s birthday?
+3)    Using a trick called a Caesar Cipher, I hid a message in the QR code.  I converted each letter to a number, shifted it up by the number you found in the previous step, and converted it back to a letter.  Can you decode what I wrote?
+
+This is the sixth and last part of the message.  The other QR codes have the other parts, feel free to help debug those until all are solved: 6Rgh5ktiujkjOsgmk4mol
