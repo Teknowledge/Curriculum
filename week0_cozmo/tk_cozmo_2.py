@@ -38,7 +38,7 @@ def solution():
   #     expression = getFacialExpression(face)
   #     if (expression):
   #       say(expression)
-  # 3 - change color of the cube that cozmo sees
+  # 3 - change color of the cube that cozmo sees (extra: cycle colors)
   # while True:
   #   cube = getCubeIfSeen()
   #   if (cube):
