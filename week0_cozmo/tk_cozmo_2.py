@@ -19,6 +19,7 @@ def cozmoFunction(sdk_conn):
   global robot
   robot = sdk_conn.wait_for_robot()
   time.sleep(0.5) # to make sure everything is detected
+  detectFacialExpressions()
   # WRITE YOUR CODE HERE!
   solution()
 
