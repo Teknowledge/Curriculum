@@ -14,19 +14,31 @@ import time
 # the function where you write the program!
 
 def cozmoFunction(sdk_conn):
-  global conn
   conn = sdk_conn
   global robot
   robot = sdk_conn.wait_for_robot()
-  time.sleep(0.5) # to make sure everything is detected
+  time.sleep(0.5) # to make sure all the things are detected (like cubes)
   detectFacialExpressions()
   # WRITE YOUR CODE HERE!
-  solution()
+  Cube1=getCube(1)
+  setCubeColor(Cube1,(255,0,0))
+  Cube2=getCube(2)
+  setCubeColor(Cube2,(0,255,0))
+  Cube3=getCube(3)
+  setCubeColor(Cube3,(0,0,255))
 
+  while True:
+    cubetoshowus=getRandomCube()
+    if(Cube1==cubetoshowus):
+      say("show us the red cube")
+    cube=getCubeIfSeen()
+    if(cube==Cube1):
+      say("good job")
 
-
+    
 
 def solution():
+    pass
   # 1 - celebrate when you see a face
   # while True:
   #   face = getFaceIfSeen()
