@@ -11,14 +11,14 @@ def startRoom():
   input("You are in a big empty room.")
   input("There are two doors.")
   input("Which door do you enter?")
-  print("Type 1 or 2 then press enter.")
+  print("Type 1 or 2 or something else then press enter.")
 
-  door = int(input("> "))
+  door = input("> ")
 
-  if door == 1:
+  if door == "1":
     input("It was a TRAP door.")
     gameOver()
-  elif door == 2:
+  elif door == "2":
     input("You won right away.  Wow.")
     win() 
   else:
