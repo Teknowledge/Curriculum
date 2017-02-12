@@ -1,3 +1,5 @@
+# Contains data for 10 teams with the best offense, defense, or passing Statistics
+# for the 2016-17 football season, from: http://www.nfl.com/stats/team
 nflData = {
     "New England Patriots":{
         "Points": 27.6,
