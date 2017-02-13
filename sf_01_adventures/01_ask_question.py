@@ -15,6 +15,7 @@ print("Question finished.")
 
 # Challenge 0: Add a number to the beginning of each of the _five_ print()
 #    function calls, indicating the order that the print() calls happen.
+#    Check your answer by running the code!
 # Hint: the last one will be: print("4 Question finished.")
 
 # Challenge 1: Change the question to

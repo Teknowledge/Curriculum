@@ -14,8 +14,12 @@ print("Hello " + name + "!")
 # Challenge 1: change it to say "Bye (name)!" at the end
 
 # Challenge 2: change it to say
-#    "(name) is a nice name, nice to meet you, (name)!"
+#    "(name) is a nice name."
+#    and then
+#    "Nice to meet you, (name)!"
+# Hint: add another print() function call
 
-# BONUS Challenge: change it to ALSO ask for an interesting fact after your name
-#    and then say
+# BONUS Challenge: change it to ALSO ask for an interesting fact, with
+#    "Tell me an interesting fact!"
+#    and then you enter an interesting fact and then it says
 #    "(interesting fact)...that's interesting! Bye (name)!"
