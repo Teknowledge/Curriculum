@@ -3,7 +3,7 @@ import random
 
 def playDiceGame():
   print("Welcome to the dice game!")
-  print("You have 3 rolls and 3 math operations to get exactly 3 points.")
+  print("You have 3 rolls and 3 math operations to get exactly 5 points.")
 
   originalScore = 0
   scoreRound1 = playRound(originalScore)
@@ -17,7 +17,7 @@ def playRound(score):
   print("Score:", score)
 
   # what does this do?
-  roll = random.randint(0,6)
+  roll = random.randint(1,6)
   print("Your roll:", roll)
 
   print("For your move, type + or - or *")
@@ -37,7 +37,7 @@ def playRound(score):
 def checkWin(score):
   print("Final score", score)
 
-  if score == 3:
+  if score == 5:
     print("YOU WIN!!")
   else:
     print("You lose")
@@ -48,14 +48,16 @@ playDiceGame()
 #    what the lines below them actually do.
 
 # Challenge 1: This game is pretty hard. Change it to be easier by making
-#    the goal to be 0 points and the dice roll always either 0, 1, or 2.
+#    the goal to be 1 point and the dice roll always either 1 or 2.
 
 # Challenge 2: There is a bug (a coding problem)! What happens if you type
 #    an invalid move? Fix the code so an invalid move does nothing.
-#    Also add another print statement that says
+#    Also add another print statement that says (after "For your move...")
 #    "Or type something else to do nothing!"
 
 # BONUS Challenge: Make the game better...use your own ideas or these ideas:
-#    - add more rounds
+#    - add more rounds (for example: 5 instead of 3)
+#    - have multiple goal scores (for example: 7, 9, and 11, any one wins)
+#        and change the dice roll back to 1-6
 #    - stop the game once you reach the goal score
 #    - roll two dice each round and let the player pick which one to use
