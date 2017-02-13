@@ -36,4 +36,6 @@ def gameOver():
 startGame()
 
 # FINAL Challenge: change this starter file to make your own adventure!!
-#    Note: Look at the file "04_adventure_example.py" for a longer example.
+
+# NOTE: Play and look at the file "04_adventure_example.py" for a
+#    longer example to get inspired.
