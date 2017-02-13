@@ -54,8 +54,8 @@ playDiceGame()
 
 # Challenge 2: There is a bug (a coding problem)! What happens if you type
 #    an invalid move? Fix the code so an invalid move does nothing.
-#    Also add another print statement that says (after "For your move...")
-#    "Or type something else to do nothing!"
+#    Also add another print statement that says
+#    "Or type something else to do nothing!" (after "For your move...")
 
 # BONUS Challenge: Make the game better...use your own ideas or these ideas:
 #    - add more rounds (for example: 5 instead of 3)
