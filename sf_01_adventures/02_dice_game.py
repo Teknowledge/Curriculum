@@ -1,6 +1,8 @@
 # "random" is a module that gives us cool extra functions
 import random
 
+# NOTE: run this file and play the game before you read the code!
+
 def playDiceGame():
   print("Welcome to the dice game!")
   print("You have 3 rolls and 3 math operations to get exactly 5 points.")
