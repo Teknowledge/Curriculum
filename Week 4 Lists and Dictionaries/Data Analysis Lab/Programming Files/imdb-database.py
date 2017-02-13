@@ -1,3 +1,5 @@
+# Contains 15 of IMDB’s 250 most popular films of all time, from here:
+# http://www.imdb.com/chart/top
 imdbData = {
     "Zootopia": {
         "Stars":["Ginnifer Goodwin", "Jason Bateman", "Idris Elba"],
