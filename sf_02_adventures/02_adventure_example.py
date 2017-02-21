@@ -1,3 +1,6 @@
+# RUN this file for an example adventure.
+# THEN go to 02_my_adventure.py to make your own!
+
 import random
 
 def startGame():

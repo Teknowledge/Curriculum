@@ -35,7 +35,8 @@ def gameOver():
 
 startGame()
 
-# Your FINAL Challenge: change this starter file to make your own adventure!!
+# Challenge 2.0 - Your final open-ended challenge today: change this "starter
+#    code" to make your own adventure!!
 
-# NOTE: Play and look at the file "04_adventure_example.py" for a
-#    longer example to get inspired.
+# NOTE: Play and look at the file "02_adventure_example.py" for a longer
+#    example to get inspired.
