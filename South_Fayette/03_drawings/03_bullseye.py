@@ -7,7 +7,7 @@ def draw(canvas, width, height):
 
 def runDrawing(width=200, height=200):
   root = Tk()
-  canvas = Canvas(root, width=width, height=height)
+  canvas = Canvas(root, width=width, height=height, highlightthickness=0)
   canvas.pack()
   draw(canvas, width, height)
   root.mainloop()
