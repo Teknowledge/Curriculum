@@ -24,21 +24,21 @@ def runDrawing(width=200, height=200):
 
 runDrawing()
 
-# Challenge 01 - First run the file and look at the first rectangle. Then
+# Challenge 1.1 - First run the file and look at the first rectangle. Then
 #    delete, one-by-one, the comments from lines 6, 7, and 8. Try to predict
 #    where each rectangle will draw on the screen.
 
-# Challenge 02 - Fill in the dimensions to draw the last lightblue rectangle
+# Challenge 1.2 - Fill in the dimensions to draw the last lightblue rectangle
 #    at the BOTTOM LEFT of the 200x200 screen.
 
-# Challenge 03 - Uncomment the rest of the code. Run it to see what it does.
+# Challenge 1.3 - Uncomment the rest of the code. Run it to see what it does.
 #    Then change the code to draw twice as many rectangles on the screen
 #    (still on the same path, just one in between every other).
 #    Hint: You only need to change one number!
 
-# Challenge 04 - Now make the same behavior, but change the while loop to a for
-#    loop.
+# Challenge 1.4 - Now make the same behavior, but change the while loop to a
+#    for loop.
 #    Hint: Look at your syntax guide for help.
 
-# BONUS Challenge 05 - Draw another set of yellow rectangles going down the
+# BONUS Challenge 1.5 - Draw another set of yellow rectangles going down the
 #    opposite diagonal (within the same while loop!).

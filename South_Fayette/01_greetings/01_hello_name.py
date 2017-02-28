@@ -9,17 +9,17 @@ name = input("Type Here: ")
 
 print("Hello " + name + "!")
 
-# Challenge 0: Figure out how to run the code
+# Challenge 1.1: Figure out how to run the code
 
-# Challenge 1: change it to say "Bye (name)!" at the end
+# Challenge 1.2: change it to say "Bye (name)!" at the end
 
-# Challenge 2: change it to say
+# Challenge 1.3: change it to say
 #    "(name) is a nice name."
 #    and then
 #    "Nice to meet you, (name)!"
 # Hint: add another print() function call
 
-# BONUS Challenge: change it to ALSO ask for an interesting fact, with
+# BONUS Challenge 1.4: change it to ALSO ask for an interesting fact, with
 #    "Tell me an interesting fact!"
 #    and then you enter an interesting fact and then it says
 #    "(interesting fact)...that's interesting! Bye (name)!"

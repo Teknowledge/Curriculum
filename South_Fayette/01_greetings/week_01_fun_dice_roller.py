@@ -22,21 +22,21 @@ if (guess == answer):
 else:
   print("Wrong, you lose.")
 
-# Challenge 0: Change the first statement "Press enter to roll one die." so
+# Challenge 1: Change the first statement "Press enter to roll one die." so
 #    that you have to actually press enter first.
 # Hint: What function makes the user input something? :)
 
-# Challenge 1: If you play the game a few times you will realize the answer
+# Challenge 2: If you play the game a few times you will realize the answer
 #    is not being checked correctly. Change the code so it is right.
 # Hint: Change line number 17 to include the variable 'roll' somehow.
 
-# Challenge 2: After the first roll, ask the player
+# Challenge 3: After the first roll, ask the player
 #    "Do you want to re-roll? "
 #     And if they type "yes", then get a new die roll and print it like
 #       New roll: 5
 #     Otherwise, keep the old die roll and don't print anything.
 
-# BONUS Challenge: Change the program to roll two dice (with an option for
+# BONUS Challenge 4: Change the program to roll two dice (with an option for
 #    re-rolling) and ask you
 #    "What number do you add to the combined roll to get 20?"
 #    and change the code accordingly to check the guess against adding to 20.
