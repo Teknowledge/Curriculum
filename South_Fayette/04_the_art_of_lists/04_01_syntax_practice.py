@@ -38,32 +38,61 @@ names = [
 
 # Challenge 1.1 - Print all the names in the list.
 
-
+# Solution:
+# for name in names:
+# 	print(name)
 
 # Challenge 1.2 - Print all the names in the list, in reverse order.
 #    Hint: Remember the for loop has three parameters!
 
-
+# Solution:
+# for i in range(len(names)-1, -1, -1):
+# 	print(names[i])
 
 # Challenge 1.3 - Make a new list of only the names that are three letters
 #    long, then print that list.
 #    Hint: You may want to start with only printing those names, then making
 #      the list.
 
+# Solution (add # to the beginning of the lines once you understand it):
+threeLetterNames = []
+for i in range(len(names)):
+	name = names[i]
+	nameLength = len(name)
+	if (nameLength == 3):
+		threeLetterNames.append(name)
+
+print(threeLetterNames)
+
+# Challenge 1.4 - Ask the user to input a capital letter (remember input()?),
+#    then save the letter they input into a variable (say, firstLetterInput),
+#    then make a new list of names (similar to the process above, with list
+#    creation and then appending names within a loop) of only names that start
+#    with that inputted letter (Hint: which index of a string has the first
+#    letter?), and finally print that list.
 
 
-# Challenge 1.4 - Ask the user to input a capital letter, then make a new list
-#    of names that start with that letter, and finally print that list.
 
+# Challenge 1.5.1 - Make a function, firstAndLastList(a), that takes a list of
+#    strings, a, and returns a new list that is tuples of the first and last
+#    letter of each name in the list.
+#    Example: If a is ["Rosanna", "Kristofer", "Yesenia" ... ]
+#      the function returns the list [("R", "a"), ("K", "r"), ("Y", "a"), ...]
 
+def firstAndLastList(a):
+	pass # write your code here
 
-# Challenge 1.5 - Make and print a new list that has tuples of:
+# to test it we will call the function like so (delete # to run it):
+# print(firstAndLastList(names))
+
+# Challenge 1.5.2 - Make a similar function to the above, getNameInfo(a), that
+#    returns a new list that for each name has (long!) tuples of:
 #    - the index of the location of the name in the original list
 #    - the name in the original list
 #    - the first letter of the name
 #    - the last letter of the name
 #    - the length of the name
-#    The list will look like so:
+#    The correct result list will print like so for the sample list of names:
 #      [(0, 'Rosanna', 'R', 'a', 7), (1, 'Kristofer', 'K', 'r', 9),
 #       ... (199, 'Kena', 'K', 'a', 4)]
 
