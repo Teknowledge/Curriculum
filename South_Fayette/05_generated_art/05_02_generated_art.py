@@ -1,5 +1,5 @@
 from tkinter import *
-import random
+from random import randint
 
 # add any shapes here that you wish to be part of the drawing from the start
 drawList = []
@@ -11,12 +11,16 @@ def makeIterativeArt():
   while (True):
     print('What would you like to add to the drawing?')
     print('(examples: "red rectangle", "blue oval")')
+    print('type "ready" when you are ready to view your creation.')
 
     drawCommand = input("> ")
+    if (drawCommand == "ready"):
+      break
 
     processDrawCommand(drawCommand)
-    print("Close the drawing window to continue.")
-    runDrawing()
+
+  print("Click the python application icon if you don't see the drawing!")
+  runDrawing()
 
 def processDrawCommand(drawCommand):
   # the .split() function turns a string of words (with spaces in between)
@@ -42,8 +46,8 @@ def draw(canvas, cw, ch):
 
 def getRandomSquareCoordinates(cw, ch):
   squareWidth = 10
-  x0 = random.randint(0, cw-squareWidth)
-  y0 = random.randint(0, ch-squareWidth)
+  x0 = randint(0, cw-squareWidth)
+  y0 = randint(0, ch-squareWidth)
   x1 = x0 + squareWidth
   y1 = y0 + squareWidth
   return (x0, y0, x1, y1)
@@ -58,29 +62,17 @@ def runDrawing(width=canvasWidth, height=canvasHeight):
 makeIterativeArt()
 
 # Challenge 2.1 - Run the file to get an idea of what it does.
-#    Then make it much cooler by making the shape width random as well.
-#    Hint: You need only change one line in getRandomSquareCoordinates.
-#    Hint: You will need to use: random.randint(lowNumber, highNumber)
+#    Then make it much cooler by making the shape width and height random as well.
+#    Hint: You need only change a few lines in getRandomSquareCoordinates.
+#    Hint: You will need to use: randint(lowNumber, highNumber)
 
-# Challenge 2.2 - Right now you can never be finished! Change the function
-#    makeIterativeArt:
-#    - so that it prints an instruction like:
-#       'Type "finish" to show your drawing once more then stop.'
-#    - so that if you type "finish" the loop and program will actually stop
-#    Hint: You'll need to change the while loop condition to use a variable!
+# Challenge 2.2 - Figure out a way to add a third number in each command, like:
+#      3 red rectangle
+#    That will add 3 red rectangles to the drawList!
+#    Hint: Read through all the code to understand what it is doing..!
+#    Look things up in your syntax guide if you don't understand.
 
-# Challenge 2.3 - Right now it doesn't save the location of the shapes, but
-#    draws them in a random spot each time!  Figure out a way to save one
-#    position for each shape.
-#    Hint: You will need to start by moving the calling of
-#    getRandomSquareCoordinates into processDrawCommand and also save it in
-#    the tuples.
-
-# Challenge 2.4 - Add a new drawing command "delete" that deletes the last
-#    shape added to the list.
-#    Hint: You will need to use the list function .pop().  See Syntax Guide.
-
-# TAKE-HOME Challenge 2.5 - Wouldn't it be cool to have more shapes to add?
+# TAKE-HOME Challenge 2.3 - Wouldn't it be cool to have more shapes to add?
 #    Do some research online to find out how to draw at least one of the
 #    following:
 #    - text (look for "tkinter create_text")
