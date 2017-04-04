@@ -75,7 +75,10 @@ def redrawAll(canvas):
 #      3. Make it so if you don't reach the text within a certain time you lose.
 
 
-# animation setup code below here #
+
+# ***** DO NOT MODIFY BELOW HERE ***** #
+
+# animation setup code
 
 class Struct(object): pass
 data = Struct()
