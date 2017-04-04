@@ -68,7 +68,7 @@ def redrawAll(canvas):
 #      "Move your player to the text to win. Use the arrow keys to move."
 #    Hint: This will be by adding another create_text call in redrawAll().
 
-# BONUS TAKE-HOME Challenge - Make it more game-like by adding some more game
+# BONUS Challenges - Make it more game-like by adding some more game
 #    mechanics:
 #      1. Make the text move once you reach it to a random spot on the screen.
 #      2. Make it so once you get to the text five times you win.
