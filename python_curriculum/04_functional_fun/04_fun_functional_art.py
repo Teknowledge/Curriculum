@@ -1,3 +1,5 @@
+# ^_^ WEEK 04 FUN ^_^
+# TAKE-HOME CHALLENGE
 from tkinter import *
 from random import randint
 
