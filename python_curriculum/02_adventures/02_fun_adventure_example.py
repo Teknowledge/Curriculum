@@ -1,7 +1,7 @@
 # RUN this file for an example adventure.
 # THEN go to 02_my_adventure.py to make your own!
 
-import random
+from random import randint
 
 def startGame():
   print("This is an adventure game.")
@@ -46,8 +46,8 @@ def emptyRoom():
 
 def mathTrap():
   input("OH NO it is a math trap.")
-  num1 = random.randint(1, 99)
-  num2 = random.randint(1, 99)
+  num1 = randint(1, 99)
+  num2 = randint(1, 99)
   stringNum1 = str(num1)
   stringNum2 = str(num2)
 

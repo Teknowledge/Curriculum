@@ -1,5 +1,5 @@
 from tkinter import *
-import random
+from random import randint
 
 # the game data for the initial game state
 def init():

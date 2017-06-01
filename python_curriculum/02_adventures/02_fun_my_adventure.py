@@ -1,3 +1,5 @@
+# ^_^ WEEK 02 FUN ^_^
+# TAKE-HOME CHALLENGE
 
 def startGame():
   print("This is an adventure game.")

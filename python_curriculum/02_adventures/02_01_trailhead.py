@@ -19,8 +19,9 @@ def redTrail():
 
 startTrail()
 
-# Challenge 1.1 - Define the greenTrail and blueTrail functions.
-#    For each, print strings of your choice!
+# Challenge 1.1 - What happens if you try to hike the blue trail?
+#    Fix it by defining and implementing the greenTrail and blueTrail
+#    functions. For each, print strings of your choice!
 
 # Challenge 1.2 - Make another function, chooseTrail, and move the
 #    if-elif-else code there. Change startTrail to call chooseTrail two times

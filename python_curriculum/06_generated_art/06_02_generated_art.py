@@ -63,16 +63,16 @@ makeIterativeArt()
 
 # Challenge 2.1 - Run the file to get an idea of what it does.
 #    Then make it much cooler by making the shape width and height random as well.
-#    Hint: You need only change a few lines in getRandomSquareCoordinates.
-#    Hint: You will need to use: randint(lowNumber, highNumber)
+# Hint: You need only change a few lines in getRandomSquareCoordinates.
+# Hint: You will need to use: randint(lowNumber, highNumber)
 
 # Challenge 2.2 - Figure out a way to add a third number in each command, like:
 #      3 red rectangle
 #    That will add 3 red rectangles to the drawList!
-#    Hint: Read through all the code to understand what it is doing..!
-#    Look things up in your syntax guide if you don't understand.
+# Hint: Read through all the code to understand what it is doing..!
+# Hint: You will need to add another element to the tuples.
 
-# TAKE-HOME Challenge 2.3 - Wouldn't it be cool to have more shapes to add?
+# BONUS Challenge 2.3 - Wouldn't it be cool to have more shapes to add?
 #    Do some research online to find out how to draw at least one of the
 #    following:
 #    - text (look for "tkinter create_text")

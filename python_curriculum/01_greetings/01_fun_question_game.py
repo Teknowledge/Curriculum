@@ -13,9 +13,9 @@ yourAnswer = input("> ")
 realAnswer = "42"
 
 if (yourAnswer == realAnswer):
-  print("Right! You won the game!")
+  print("Right! :-)")
 else:
-  print("Wrong, you lost the game.")
+  print("Wrong, you lose.")
 
 # Challenge fun.1 - Play the game - what is wrong?
 #    Change the code to be correct (can be the answer or the question or both).

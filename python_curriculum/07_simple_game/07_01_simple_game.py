@@ -73,6 +73,7 @@ def redrawAll(canvas):
 #      1. Make the text move once you reach it to a random spot on the screen.
 #      2. Make it so once you get to the text five times you win.
 #      3. Make it so if you don't reach the text within a certain time you lose.
+#      4. Your own ideas!
 
 
 

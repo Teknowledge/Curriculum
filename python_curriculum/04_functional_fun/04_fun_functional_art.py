@@ -2,6 +2,8 @@ from tkinter import *
 from random import randint
 
 def drawRectangle(canvas, rectWidth, rectHeight, color):
+  # The randint(low, high) function gives you a random number!
+  # (If you have the "from random import randint" line at the top.)
   x1 = randint(0, 190)
   y1 = randint(0, 190)
   x2 = x1 + 200
@@ -22,10 +24,9 @@ def runDrawing(width=200, height=200):
 
 runDrawing()
 
-# Challenge fun.1 - The randint(low, high) function gives you a random number!
-#    (If you have the "from random import randint" line at the top.)
-#    Right now, you'll notice the rectWidth, rectHeight, and color parameters
-#    are unused.  Fix the drawRectangle function so they are used!
+# Challenge fun.1 - Right now, you'll notice the rectWidth, rectHeight, and
+#    color parameters are unused. Fix the drawRectangle function so they are
+#    used!
 
 # Challenge fun.2 - Make it so the rectWidth and rectHeight numbers are random
 #    in drawRectangle!

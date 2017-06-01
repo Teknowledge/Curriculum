@@ -38,7 +38,7 @@ runDrawing()
 #    Hint: You only need to change one number!
 
 # Challenge 1.4 - Now make the same behavior, but change the while loop to a
-#    for loop.
+#    for loop, and change create_rectangle to create_oval.
 #    Hint: Look at your syntax guide for help.
 
 # BONUS Challenge 1.5 - Draw another set of yellow rectangles going down the

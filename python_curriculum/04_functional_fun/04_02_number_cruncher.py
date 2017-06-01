@@ -21,8 +21,8 @@ def crunchNumbers():
 
 crunchNumbers()
 
-# Challenge 2.1 - The add function doesn't work right! Why is that? Fix it
-#    by using the built-in Python int() function.
+# Challenge 2.1 - Run the code.  The add function doesn't work right! Why is
+#    that? Fix it by using the built-in Python int() function.
 #    Hint: To see what the int() function can do, try these in Python:
 #      int("5")
 #      int(5.5)
