@@ -21,11 +21,13 @@ This curriculum is meant to be used in eight lessons, running 60 to 75 minutes l
 
 # Overall Curricular Goals
 
-* **Fun**: Build students' interest in coding - "This is cool."
-* **Mastery**: Build students' skills and confidence in coding - "I can do this."
-* **Inspiration**: Inspire and motivate students' understanding of what kinds of problems and creative projects code is useful for - "I want to try doing this idea I have with code."
+**Fun**: Build students' interest in coding - "This is cool."
 
-# Curriculum Overview Lesson-by-Lesson
+**Mastery**: Build students' skills and confidence in coding - "I can do this."
+
+**Inspiration**: Inspire and motivate students' understanding of what kinds of problems and creative projects code is useful for - "I want to try doing this idea I have with code."
+
+# Curriculum Overview: Lesson-by-Lesson
 
 **01_greetings**
 * strings
