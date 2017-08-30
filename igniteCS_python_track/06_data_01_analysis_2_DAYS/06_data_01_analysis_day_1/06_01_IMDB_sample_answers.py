@@ -43,7 +43,8 @@ print(IMDBData["Zootopia"]["Year"])
 # Challenge 1.5 - Now let's start answering some questions about these movies.
 # For starters, let us determine the highest rated movie in this database. Write
 # a loop that goes over all the movies in the database, gets its rating,
-# and prints the name and rating of the highest rated movie.
+# and prints the name and rating of the highest rated movie. Check your answer
+# by looking at the actual database.
 #
 # Hint: You will need to have two variables, maxRating and maxRatedMovie,
 # that keep track of the highest rated movie you have seen so far.
@@ -59,7 +60,8 @@ print(maxRatedMovie, " is the highest rated movie in the database, with rating "
 
 # Challenge 1.6 - Now let's find the oldest movie in the database. Write a loop
 # that goes over every movie in the database, get its year, and ends up printing
-# the name and year of the oldest movie.
+# the name and year of the oldest movie. Check your answer by looking at the
+# actual database.
 #
 # Hint: Like in Challenge 1.5, you will have to maintain two variables as you
 # go through the loop. But this time, they will keep track of the oldestYear you
@@ -76,7 +78,8 @@ print(oldestMovie, " is the oldest movie in the database, made in ", oldestYear)
 
 # Challenge 1.7 - Now let's find the number of Animation movies in the database.
 # Write a loop that goes over every movie in the database, get its genre, and
-# ends up printing the number of Animation movies.
+# ends up printing the number of Animation movies. Check your answer by 
+# looking at the actual database.
 #
 # Hint: This time, you will have to maintain one variable, which represents the
 # number of Animation movies you have seen so far.
@@ -92,7 +95,7 @@ print(numAnimations, "Animations in the database.")
 # BONUS Challenge 1.8 - As you saw above, the "Stars" attribute of a movie is a
 # list of strings. It contains the names of the actors/actresses in the movie.
 # Write a loop that determines how many of the movies in this database "Tom Hanks"
-# has acted in.
+# has acted in. Check your answer by looking at the actual database.
 #
 # Hint 1: Like in Challenge 1.5, you will have to loop over the list and have an
 # if statement in the loop. But this time, your if statement wants to check
@@ -113,6 +116,7 @@ print(tomHanksMovies, "Tom Hanks Movies")
 # BONUS Challenge 1.9 - In Challenge 1.6, you wrote code to determine the number
 # of Tom Hanks movies in the database. Now, modify it so that you can type a name in,
 # and it will tell you the number of movies by that actor/actress in the database.
+# Check your answer by looking at the actual database.
 #
 # Hint: Remember input()?
 
