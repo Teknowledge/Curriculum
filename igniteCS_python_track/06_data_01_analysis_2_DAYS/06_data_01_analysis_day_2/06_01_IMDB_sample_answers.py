@@ -65,14 +65,7 @@ print(maxRatedMovie, " is the highest rated movie in the database, with rating "
 # go through the loop. But this time, they will keep track of the oldestYear you
 # have seen so far, and the name of the oldestMovie.
 
-oldestYear, oldestMovie = 2018, ""
-for movieName in IMDBData:
-    year = IMDBData[movieName]["Year"]
-    if (year < oldestYear):
-        oldestYear = year
-        oldestMovie = movieName
 
-print(oldestMovie, " is the oldest movie in the database, made in ", oldestYear)
 
 # Challenge 1.7 - Now let's find the number of Animation movies in the database.
 # Write a loop that goes over every movie in the database, get its genre, and
@@ -81,13 +74,7 @@ print(oldestMovie, " is the oldest movie in the database, made in ", oldestYear)
 # Hint: This time, you will have to maintain one variable, which represents the
 # number of Animation movies you have seen so far.
 
-numAnimations = 0
-for movieName in IMDBData:
-    genre = IMDBData[movieName]["Genre"]
-    if (genre == "Animation"):
-        numAnimations += 1
 
-print(numAnimations, "Animations in the database.")
 
 # BONUS Challenge 1.8 - As you saw above, the "Stars" attribute of a movie is a
 # list of strings. It contains the names of the actors/actresses in the movie.
@@ -103,11 +90,7 @@ print(numAnimations, "Animations in the database.")
 # will have to maintain one variable that keeps track of the number of Tom Hanks
 # movies you have encountered so far in your loop.
 
-tomHanksMovies = 0
-for movieName in IMDBData:
-    if ("Tom Hanks" in IMDBData[movieName]["Stars"]):
-        tomHanksMovies += 1
-print(tomHanksMovies, "Tom Hanks Movies")
+
 
 
 # BONUS Challenge 1.9 - In Challenge 1.6, you wrote code to determine the number
@@ -115,10 +98,3 @@ print(tomHanksMovies, "Tom Hanks Movies")
 # and it will tell you the number of movies by that actor/actress in the database.
 #
 # Hint: Remember input()?
-
-actor = input("Write the name of an actor or actress: ")
-movies = 0
-for movieName in IMDBData:
-    if (actor in IMDBData[movieName]["Stars"]):
-        movies += 1
-print("There are ", movies, " movies with ", actor, " in this database.")
