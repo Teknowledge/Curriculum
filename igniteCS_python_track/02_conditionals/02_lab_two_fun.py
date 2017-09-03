@@ -1,4 +1,4 @@
-# ^_^ WEEK 01 FUN ^_^
+# ^_^ Lab Two FUN ^_^
 
 input("Press enter to play a game.")
 
