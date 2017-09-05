@@ -2,12 +2,12 @@
 # run this python file to see what it does
 # then try your hand at the challenges below!
 
-question = "What is your name?"  # This is ignored
+question = "What is your name?"
 print(question)
 print()
 print("Type your name then press enter.")
 
-name = input("Type Here: ") #Where you type your name
+name = input("Type Here: ") # Where you type your name
 print(name, type(name))
 print("Hello " + name + "!")
 
@@ -23,6 +23,6 @@ print("Hello " + name + "!")
 
 # Challenge 1.4 - Change it to ALSO ask for an interesting fact, with
 #    "Tell me an interesting fact!"
-#    and then you enter an interesting fact and then it says
+#    and then when you enter an interesting fact, make it say
 #    "(interesting fact)...that's interesting! Bye (name)!"
 
