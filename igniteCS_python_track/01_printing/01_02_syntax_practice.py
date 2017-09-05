@@ -18,14 +18,15 @@
 
 
 
-# Challenge 2.4 - Same as 2.3 but print out a message like:
-#    "Your favorite color is blue."
+# Challenge 2.4 - Write code that first creates a variable called "faveColor"
+#    with the string value "blue" assigned to it.
+#    Then print out the phrase "Your favorite color is blue." 
 #    using the variable "faveColor".
 
 
 
-# Challenge 2.5 - Same as 2.4 but combine it with 2.2 to ask for your favorite
-#    color and then print a message like:
+# Challenge 2.5 - Write code to ask for your favorite color and 
+#    then print the following message:
 #    "Your favorite color is (inputted color)".
 
 
