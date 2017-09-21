@@ -24,11 +24,11 @@ else:
 # Challenge fun.2 - Add two more questions to the game!
 
 
-#Place '#' at the beginning of the lines of code above to comment them out
+
+# Place '#' at the beginning of the lines of code above to comment them out
 
 
 # Remove the '#' in the beginning of the lines of code below
-
 
 
 
@@ -40,33 +40,24 @@ else:
 #print("What is your favorite color?")
 #favColor = input("> ")
 
-
-
 #if favColor == 'red':
-#    print("Cool your favorite color is red!")
+#  print("Cool your favorite color is red!")
 #elif favColor != 'blue':
-#    print("Your favorite color isn't blue or red, it is " + favColor + ".")
+#  print("Your favorite color isn't blue or red, it is " + favColor + ".")
 #else:
-#    print("Wow, your favorite color is blue!")
+#  print("Wow, your favorite color is blue!")
 
 
+# Challenge 1.1 - What do you think this program will print if your favorite
+#   color is purple?
 
-#Challenge 1.1
-#What do you think this program will print if your favorite color is purple?
+# Challenge 1.2 - What do you think this program will print if your favorite
+#   color is blue?
 
+# Challenge 1.3 - Run the code and play the game!
 
-#Challenge 1.2
-#What do you think this program will print if your favorite color is blue?
+# Challenge 1.4 - Change the code so if your favorite color is blue, the
+#   print statement under else will print.
 
-#Challenge 1.3
-#Run the code and play the game!
-
-#Challenge 1.4
-#Change the code so if your favorite color is blue, the print statement under
-#else will print.
-
-# Challenge 1.5
-# play with the code to really understand the if, elif, and else along with the
-# ==, and !=
-
-
+# Challenge 1.5 - Play with the code to really understand the if, elif, and
+#   else along with the ==, and !=.
