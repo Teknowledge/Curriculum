@@ -1,4 +1,3 @@
-# ^_^ Lab Two FUN ^_^
 
 input("Press enter to play a game.")
 
