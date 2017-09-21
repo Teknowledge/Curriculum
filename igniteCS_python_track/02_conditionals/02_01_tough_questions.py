@@ -18,10 +18,10 @@ else:
   print("Wrong, you lose.")
 
 
-# Challenge fun.1 - Play the game - what is wrong?
+# Challenge 2.1 - Play the game - what is wrong?
 # Change the code to be correct (can be the answer or the question or both).
 
-# Challenge fun.2 - Add two more questions to the game!
+# Challenge 2.2 - Add two more questions to the game!
 
 
 
@@ -48,16 +48,22 @@ else:
 #  print("Wow, your favorite color is blue!")
 
 
-# Challenge 1.1 - What do you think this program will print if your favorite
-#   color is purple?
+# Challenge 2.3 - What do you think this program will print if your favorite
+#   color is blue?  What will it print for purple?  Run the code to see.
 
-# Challenge 1.2 - What do you think this program will print if your favorite
-#   color is blue?
+# Challenge 2.4 - Change it so it prints a new, special message for purple.
+#   Hint: You'll add a new "elif".
 
-# Challenge 1.3 - Run the code and play the game!
+# Challenge 2.5 - Let's say we want this program to work if the input starts
+#   with a capital letter! So "blue" and "Blue" should do the same thing, and
+#   "Purple" and "purple" should do the same thing.
+#   Hint: Use the "and" and "or" python keywords to accomplish this.
 
-# Challenge 1.4 - Change the code so if your favorite color is blue, the
-#   print statement under else will print.
-
-# Challenge 1.5 - Play with the code to really understand the if, elif, and
-#   else along with the ==, and !=.
+# BONUS Challenge 2.6 - Add a new question below:
+#   "How do you spell the color that is a mix of black and white?"
+# If their answer is gray (with an a), say:
+#   "You must use American English!"
+# If their answer is grey (with an e), say:
+#   "You must use British English!"
+# And in all other cases, say:
+#   "Whoops - that's not the color I meant!"
