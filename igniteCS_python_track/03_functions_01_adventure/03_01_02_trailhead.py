@@ -24,7 +24,8 @@ startTrail()
 #    functions. For each, print strings of your choice!
 
 # Challenge 1.2 - Make another function, chooseTrail, and move the
-#    if-elif-else code there. Change startTrail to call chooseTrail two times
+#    code that assigns the variable trail and the if-elif-else code there.
+#    Change startTrail to call chooseTrail two times
 #    in a row so you can now hike two different trails.
 
 # BONUS Challenge 1.3 - Make the code allow you to go on an infinite hike...

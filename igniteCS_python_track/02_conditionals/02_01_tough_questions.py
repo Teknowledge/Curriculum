@@ -54,9 +54,9 @@ else:
 #   Hint: You'll add a new "elif".
 
 # Challenge 2.5 - Let's say we want this program to work if the input starts
-#   with a capital letter! So "blue" and "Blue" should do the same thing, and
-#   "Purple" and "purple" should do the same thing.
-#   Hint: Use the "and" and "or" python keywords to accomplish this.
+#   with a capital letter! So either "blue" or "Blue" should do the same thing,
+#   and either "Purple" or "purple" should do the same thing.
+#   Hint: Use the "and" or "or" python keywords to accomplish this.
 
 # BONUS Challenge 2.6 - Add a new question below:
 #   "How do you spell the color that is a mix of black and white?"
