@@ -23,7 +23,7 @@ import pickle
 
 ################################################################################
 # CHALLENGE 1:
-# Briefly ead through the code below and see how the pieces fit together and 
+# Briefly read through the code below and see how the pieces fit together and
 # correspond to the pseudocode you wrote. Don't write any code yet!
 ################################################################################
 
