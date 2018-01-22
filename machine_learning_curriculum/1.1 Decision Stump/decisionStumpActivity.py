@@ -23,8 +23,8 @@ import pickle
 
 ################################################################################
 # CHALLENGE 1:
-# Read through the code below and see how the pieces fit together and correspond
-# to the pseudocode you wrote. Don't write any code yet!
+# Briefly ead through the code below and see how the pieces fit together and 
+# correspond to the pseudocode you wrote. Don't write any code yet!
 ################################################################################
 
 def getImpurity(data):
@@ -147,16 +147,20 @@ class DecisionStump:
 ################################################################################
 
 def loadDataFromFile(filepath):
-    # This function takes in a filepath to the temperature data, and returns a list of
-    # 2-tuples representing the data.
+    """
+    This function takes in a filepath to the temperature data, and returns a list of
+    2-tuples representing the data.
+    """
     name = str(filepath)
     output = pickle.load(open(name, "rb" ))
     return output
 
 
-# this function takes in a decision stump and the test data, and returns how
-# accurate the decision tree is on the test data.  Please use this to test how accurate you are.
 def testDecisionStump(trainingData, testData):
+    """
+    This function takes in a decision stump and the test data, and returns how accurate the
+    decision tree is on the test data.  Please use this to test how accurate you are.
+    """
     numCorrect = 0
     stump = DecisionStump(trainingData)
     stump.train()
