@@ -189,7 +189,28 @@ acc = testDecisionStump(studentDataPure, studentTest)
 print ("Accuracy of our decision stump on the test data is", str(acc*100) + "%")
 
 ################################################################################
-# BONUS CHALLENGE
+# BONUS CHALLENGE 1
+# There is actually a bug in this implementation of decision trees. When
+# calculating splitValues and using the splitValue to classify datapoints,
+# we assume that every point below the split is a 0 and every point above the
+# split is a 1. However, that is not necessarily true. For example, consider the
+# below data:
+#
+# 93.0, 1
+# 94.5, 1
+# 96.8, 0
+# 98.6, 0
+#
+# In this case, our decision tree algorithm will misclassify all points. This is
+# not good, since we ideally want a general decision tree implementation that
+# can work regardless of the data. Find a way to modify this implementation so
+# that after calculating a splitValue, it predicts the label that is most common
+# below/above the splitValue. It is extra good if you don't iterate over the
+# training data in the classify function (since that is inefficient).
+################################################################################
+
+################################################################################
+# BONUS CHALLENGE 2
 # Also test your decision stump implementation on the impure dataset, by
 # modifying the lines between CHALLENGE 7 and the BONUS CHALLENGE. If your
 # implementation is correct, your training accuracy should be 78.57142857142857%
