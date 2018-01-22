@@ -131,7 +131,7 @@ print ("Accuracy of our decision stump on the test data is", str(error*100) + "%
 
 studentDataImpure = loadDataFromFile("studentDataImpure.p")
 acc = testDecisionStump(studentDataImpure, studentDataImpure)
-# If your implementation is correct, this value should be 57.1428571429%.
+# If your implementation is correct, this value should be 78.57142857142857%
 print ("Accuracy of our decision stump on the training data is", str(acc*100) + "%")
 
 
