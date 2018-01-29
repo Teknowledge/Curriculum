@@ -28,16 +28,16 @@
 
 # CHALLENGE 5 -  This function takes in an instance of the Node class. First, it
 # should check if that node's training data is fully pure (base case) by calling
-# getImpurity on node.trainingData. If impurity is zero (the node is pure) then 
-# return since this node is done. 
-# If the impurity isn't zero, we have more work to do. For the rest of this function, 
-# pay attention to the inputs and outputs of the functions we call! 
-# The next thing the function should do is get the best split for node.trainingData 
-# using getBestSplit(). This tells us where to split our current node's data. 
-# Next, we should call node.setSplit() on the node to set and get its left and right 
-# children.  Finally, we need to make sure that all our children have pure data too. 
-# So the function should call itself recursively on the left and right children (i.e. 
-# call createDecisionTreeRecursive twice, once for each child). 
-# Note that this function down not have to return anything, since it mutably modifies 
+# getImpurity on node.trainingData. If impurity is zero (the node is pure) then
+# return since this node is done.
+# If the impurity isn't zero, we have more work to do. For the rest of this function,
+# pay attention to the inputs and outputs of the functions we call!
+# The next thing the function should do is get the best split for node.trainingData
+# using getBestSplit(). This tells us where to split our current node's data.
+# Next, we should call node.setSplit() on the node to set and get its left and right
+# children (NOTE: don't swap the left and right children).
+# Finally, we need to make sure that all our children have pure data too.
+# So the function should call itself recursively on the left and right children (i.e.
+# call createDecisionTreeRecursive twice, once for each child).
+# Note that this function does not have to return anything, since it mutably modifies
 # the node. (Ask a mentor if you are curious about what this means.)
-

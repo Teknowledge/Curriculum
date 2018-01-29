@@ -254,6 +254,3 @@ testData = loadDataFromFile("testData.csv")
 # Test the decision tree on the test data
 accuracy = testDecisionTree(decisionTree, testData)
 print("Accuracy: "+str(accuracy))
-
-
-

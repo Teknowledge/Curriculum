@@ -19,8 +19,8 @@
 # create a decision tree that uses the first two (yesterday's values) to predict
 # the last one (today's value). The training data is from every day the stock
 # market was open in 2016, and the test data is from every day the stock market
-# was open in 2017. 
-# 
+# was open in 2017.
+#
 # Like last week, follow the numbered challenges in order. First, try to do each
 # challenge by yourself. If you need a hint, look at the "decisionStumpHints.py"
 # file for pseudocode and other hints.
@@ -125,8 +125,8 @@ def testDecisionTree(decisionTree, testData):
 # the best splitting point, splitting the data, and continuing from there until
 # you have perfectly separated the data. We have written the splitData function
 # for you, which takes in the dataset, an attribute index to split on, and a
-# value at which to split, and splits the dataset into two along that attribute. 
-# Read through the splitData function, and make sure you understand what it is doing. 
+# value at which to split, and splits the dataset into two along that attribute.
+# Read through the splitData function, and make sure you understand what it is doing.
 # Ask a mentor if you are unsure!
 ################################################################################
 
@@ -165,8 +165,8 @@ def splitData(dataset, attributeIndex, value):
 # Gini Impurity
 def getImpurity(dataset):
     ############################################################################
-    # Challenge 2: Implement the getImpurity function below this line. 
-    # Feel free to copy or refer to your code from last week, but note that the 
+    # Challenge 2: Implement the getImpurity function below this line.
+    # Feel free to copy or refer to your code from last week, but note that the
     # dataset consists of three-tuples this time.
     ############################################################################
 
@@ -180,7 +180,7 @@ def getImpurity(dataset):
 def evaluateSplit(dataset, split1, split2):
     ############################################################################
     # Challenge 3: Implement the evaluateSplit function below this line.
-    # Again, feel free to copy or refer to your code from last week, but note that 
+    # Again, feel free to copy or refer to your code from last week, but note that
     # the inputs to the function are different than the inputs from last week.
     ############################################################################
 
@@ -210,7 +210,7 @@ def getBestSplit(dataset):
     for value in firstAttributeSplitOptions:
         # In Python, you can specify the parameter name when you pass in values to a
         # function, like we do here. It's a way to write more readable code.
-        split1, split2 = splitData(dataset=dataset, attributeIndex=0, value=value) 
+        split1, split2 = splitData(dataset=dataset, attributeIndex=0, value=value)
         impurity = evaluateSplit(dataset, split1, split2)
         if (minImpurity is None or impurity < minImpurity): # we found a better split!
             minImpurity = impurity
@@ -220,10 +220,10 @@ def getBestSplit(dataset):
             minSplit2 = split2
 
     ############################################################################
-    # Challenge 4: Under this line, add code to finish implementing the getBestSplit 
+    # Challenge 4: Under this line, add code to finish implementing the getBestSplit
     # function.
     # You'll have to write code to split along the second attribute (index 1) to find
-    # the best split location. Your code should be very similar to the code above 
+    # the best split location. Your code should be very similar to the code above
     # that splits along the first attribute, except remember that the second attribute
     # is a binary attribute!
     ############################################################################
@@ -241,21 +241,21 @@ def makeDecisionTreeRecursively(node):
     ############################################################################
     # Challenge 5.1: Understand the Node class defined near the top of this file. Make
     # sure you understand what the node.setSplit function does.
-    # 
+    #
     # Challenge 5.2: Finally, we are going to write the core logic of a decision tree
-    # that differentiates it from a decision stump -- namely, the recursion. 
-    # Add code to implement the makeDecisionTreeRecursively function. 
-    # 
-    # Hint: you will have to call makeDecisionTreeRecursively at some point within this 
+    # that differentiates it from a decision stump -- namely, the recursion.
+    # Add code to implement the makeDecisionTreeRecursively function.
+    #
+    # Hint: you will have to call makeDecisionTreeRecursively at some point within this
     # function. Refer to the hints file for more hints.
     # This function should be around 8 lines long without comments.
     ############################################################################
-    
+
     # Write your code here!
-   
+
    return
 
-# Initializes the decision tree with the starting node that has all the training data, 
+# Initializes the decision tree with the starting node that has all the training data,
 # then calls the recursive function to build the rest of the decision tree
 def createDecisionTree(trainingData):
     startingNode = Node(trainingData)
@@ -271,7 +271,7 @@ decisionTree = createDecisionTree(trainingData)
 testData = loadDataFromFile("testData.csv")
 # Test the decision tree on the test data
 accuracy = testDecisionTree(decisionTree, testData)
-print("Accuracy: "+str(accuracy))
+print("Accuracy: "+str(accuracy)) # Should be 0.5059760956175299
 
 
 # NOTE: Make sure to keep the order of split1 and split2 the same -- don't mix
@@ -311,27 +311,3 @@ print("Accuracy: "+str(accuracy))
 # corresponding accuracy. What was the overall depth of the tree before this
 # change? Which depth has the best accuracy? What does that tell you about
 # overfitting?
-
-
-# COMPREHENSION QUESTIONS - think about these and/or discuss them
-# with a friend. We will discuss them at the end of class.
-#    - As you saw, the accuracy of our decision tree is around 50%. That is as
-#      bad as if we tossed a coin and predicted "UP"/"DOWN"! What does this
-#      tell you about making stock market predictions using historical data?
-#      Do you have any ideas for other data we could take into account to make
-#      a better predictor?
-#    - All of our training data came from 2016 and all of our test data came
-#      from 2017. What are the pros/cons of doing this?
-#    - When splitting along the first attribute (simple moving average), we try
-#      every possible split. However, the number of splits is very large
-#      (equivalent to the size of the training data minus one). Do you have any
-#      ideas for a faster way to evaluate splits, that may not get us the best
-#      split but will get us a good enough split (there are many options).
-#    - What if instead of each split being binary (i.e. yes or no), some had
-#      more options. For example, if instead of UP/DOWN for the second attrbute,
-#      we had UP/DOWN/SAME, then we may have to have 3-way splits. What parts of
-#      the code would we have to modify to account for this?
-#    - Decision trees in general  are useful in day-to-day life. Fundamentally,
-#      they are just a way of organizing cascading conditions (i.e. if I do X,
-#      then I will go down this rout of the tree). Think of ways in which
-#      decision trees might be useful in your life, or the lives of people you know.
