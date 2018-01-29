@@ -239,13 +239,16 @@ def getBestSplit(dataset):
 # anything and instead modifies the internals of the input node.
 def makeDecisionTreeRecursively(node):
     ############################################################################
-    # Challenge 5: Finally, we are going to write the core logic of a decision tree
+    # Challenge 5.1: Understand the Node class defined near the top of this file. Make
+    # sure you understand what the node.setSplit function does.
+    # 
+    # Challenge 5.2: Finally, we are going to write the core logic of a decision tree
     # that differentiates it from a decision stump -- namely, the recursion. 
-    # Under this line, add code to implement the makeDecisionTreeRecursively function. 
-    # You'll need to refer to the Node class defined near the top of this file. 
+    # Add code to implement the makeDecisionTreeRecursively function. 
+    # 
     # Hint: you will have to call makeDecisionTreeRecursively at some point within this 
     # function. Refer to the hints file for more hints.
-    # This function should be around 10 lines long without comments.
+    # This function should be around 8 lines long without comments.
     ############################################################################
     
     # Write your code here!
