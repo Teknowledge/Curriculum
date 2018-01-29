@@ -19,7 +19,13 @@
 # create a decision tree that uses the first two (yesterday's values) to predict
 # the last one (today's value). The training data is from every day the stock
 # market was open in 2016, and the test data is from every day the stock market
-# was open in 2017. Good luck!
+# was open in 2017. 
+# 
+# Like last week, follow the numbered challenges in order. First, try to do each
+# challenge by yourself. If you need a hint, look at the "decisionStumpHints.py"
+# file for pseudocode and other hints.
+#
+# Good luck!
 #
 ################################################################################
 
@@ -30,6 +36,16 @@
 # do.
 ################################################################################
 import csv, random
+
+################################################################################
+# CHALLENGE 0 - The first part of any problem that uses data is to understand
+# the dataset. Go to where we load the training data in this file (near the
+# end of the code), and print the trainingData. Make sure you understand
+# what the data is, and how to interact with it (ask a friend or mentor for
+# help if you are unsure).
+# Also, note what the baseline accuracy of our untrained decision tree is!
+################################################################################
+
 
 # This class represents a single node in the decision tree. To create a Node,
 # do "exampleNode = Node(data)". The data should be the elements of the training data
@@ -58,7 +74,7 @@ class Node(object):
 # this function takes in a filepath to the stock data, and returns a list of
 # 3-tuples representing the data.
 def loadDataFromFile(filepath):
-    with open(filepath, 'rb') as csvfile:
+    with open(filepath, 'rt') as csvfile:
         fileReader = csv.reader(csvfile)
         data = []
         for row in fileReader:
@@ -103,6 +119,17 @@ def testDecisionTree(decisionTree, testData):
         if predictedLabel == actualLabel: numCorrect += 1
     return float(numCorrect)/float(len(testData))
 
+
+################################################################################
+# CHALLENGE 1 - If you recall, the decision tree algorithm consists of finding
+# the best splitting point, splitting the data, and continuing from there until
+# you have perfectly separated the data. We have written the splitData function
+# for you, which takes in the dataset, an attribute index to split on, and a
+# value at which to split, and splits the dataset into two along that attribute. 
+# Read through the splitData function, and make sure you understand what it is doing. 
+# Ask a mentor if you are unsure!
+################################################################################
+
 # Splits the dataset into two, and returns the two lists. If the attributeIndex
 # is 1, split1 will contain those data points where yesterday's change is ==
 # to value, and split2 will contain the points that were not equal to value.
@@ -129,41 +156,61 @@ def splitData(dataset, attributeIndex, value):
     # Return the splits
     return split1, split2
 
+
 ################################################################################
-# WRITE YOUR CODE BELOW THIS
+# WRITE YOUR CODE BELOW THIS LINE
 ################################################################################
 
 # Returns a float that represents the impurity of the data, according to the
 # Gini Impurity
 def getImpurity(dataset):
     ############################################################################
-    # FILL THIS IN
+    # Challenge 2: Implement the getImpurity function below this line. 
+    # Feel free to copy or refer to your code from last week, but note that the 
+    # dataset consists of three-tuples this time.
     ############################################################################
 
-# evaluateSplit takes in three lists -- the overall data list, and the two lists
+    # Write your code here!
+
+    return 0 # TODO remove this line once you begin the challenge.
+
+# evaluateSplit takes in three lists: the overall data list, and the two lists
 # it is split into. It then returns a float corresponding to how good the
-# split is
+# split is (i.e. the weighted impurity).
 def evaluateSplit(dataset, split1, split2):
     ############################################################################
-    # FILL THIS IN
+    # Challenge 3: Implement the evaluateSplit function below this line.
+    # Again, feel free to copy or refer to your code from last week, but note that 
+    # the inputs to the function are different than the inputs from last week.
     ############################################################################
 
+    # Write your code here!
 
-# generates the best split of the data. It returns the attributeIndex to split on,
+    return 0 # TODO remove this line once you begin the challenge.
+
+
+# Generates the best split of the data. It returns the attributeIndex to split on,
 # the value of the split, and the two resulting lists after splitting along
 # that attributeIndex and value.
-def generateBestSplit(dataset):
+def getBestSplit(dataset):
     # Initialize variables to keep track of the best split we have seen so far
     minImpurity = None
     minAttributeIndex = None
     minValue = None
-    minSplit1 = None
-    minSplit2 = None
-    # First, try splitting along the first attribute (index 0)
-    sortedDataset = sorted(dataset) # sort it so that every value except the max can be used as a splitting point
-    splitOptionsFirstAttribute = [sortedDataset[i][0] for i in range(len(dataset)-1)]
-    for value in splitOptionsFirstAttribute:
-        split1, split2 = splitData(dataset, 0, value) # Remember, the second attribute is at index 1!!!
+    minSplit1 = None # Should be set to the left list after the split.
+    minSplit2 = None # Should be set to the right list after the split.
+
+    # First, we try splitting along the first attribute (index 0)
+
+    # Sort the dataset so that every value of the first attribute but the max
+    # can be used as a splitting point. Note: you do not have to do this for the
+    # second attribute. (Think about why that is if you like.)
+    sortedDataset = sorted(dataset)
+    firstAttributeSplitOptions = [sortedDataset[i][0] for i in range(len(dataset)-1)]
+    for value in firstAttributeSplitOptions:
+        # In Python, you can specify the parameter name when you pass in values to a
+        # function, like we do here. It's a way to write more readable code.
+        split1, split2 = splitData(dataset=dataset, attributeIndex=0, value=value) 
         impurity = evaluateSplit(dataset, split1, split2)
         if (minImpurity is None or impurity < minImpurity): # we found a better split!
             minImpurity = impurity
@@ -171,26 +218,45 @@ def generateBestSplit(dataset):
             minValue = value
             minSplit1 = split1
             minSplit2 = split2
-    # Next, write code to split along the second attribute (index 1)
+
     ############################################################################
-    # FILL THIS IN
+    # Challenge 4: Under this line, add code to finish implementing the getBestSplit 
+    # function.
+    # You'll have to write code to split along the second attribute (index 1) to find
+    # the best split location. Your code should be very similar to the code above 
+    # that splits along the first attribute, except remember that the second attribute
+    # is a binary attribute!
     ############################################################################
+
+    # Write your code here!
+
     return minAttributeIndex, minValue, minSplit1, minSplit2
 
 # This function takes in a node, and checks if its trainingData is fully pure
-# (base case). If not, it generates the best split of that training data,
+# (base case). If not, it gets the best split of the node's training data,
 # sets that split for the node to get its new left and right children, and
-# calls itself recursively on the two children.
-def createDecisionTreeRecursive(node):
+# calls itself recursively on its two children. This function does not return
+# anything and instead modifies the internals of the input node.
+def makeDecisionTreeRecursively(node):
     ############################################################################
-    # FILL THIS IN
+    # Challenge 5: Finally, we are going to write the core logic of a decision tree
+    # that differentiates it from a decision stump -- namely, the recursion. 
+    # Under this line, add code to implement the makeDecisionTreeRecursively function. 
+    # You'll need to refer to the Node class defined near the top of this file. 
+    # Hint: you will have to call makeDecisionTreeRecursively at some point within this 
+    # function. Refer to the hints file for more hints.
+    # This function should be around 10 lines long without comments.
     ############################################################################
+    
+    # Write your code here!
+   
+   return
 
-# Initializes the decision tree with the starting node, then calls the recursive
-# function to build the rest of the decision tree
+# Initializes the decision tree with the starting node that has all the training data, 
+# then calls the recursive function to build the rest of the decision tree
 def createDecisionTree(trainingData):
     startingNode = Node(trainingData)
-    createDecisionTreeRecursive(startingNode)
+    makeDecisionTreeRecursively(startingNode)
     return startingNode
 
 # First, get the training data
@@ -205,59 +271,6 @@ accuracy = testDecisionTree(decisionTree, testData)
 print("Accuracy: "+str(accuracy))
 
 
-# CHALLENGE 0 - The first part of any problem that uses data is to understand
-# the dataset. Go to where we load the training data in this file (near the
-# end of the code), and print the trainingData. Make sure you understand
-# what the data is, and how to interact with it (ask a friend or mentor for
-# help if you are unsure).
-
-
-# CHALLENGE 1 - Next, write the getImpurity function. In this function, you
-# should first determine the number of points in the dataset with the
-# "UP" label, and the number of points with the "DOWN" label (be sure one to
-# get confused between yesterday's UP/DOWN labels, which are ar index 1, and
-# today's UP/DOWN labels, which are at index 2). Once you have the number of
-# points, calculate the fraction of points in the dataset that have the up label
-# and the down label. Finally, use that to calculate the impurity, using the Gini
-# Impurity measure we taught in class.
-
-
-# CHALLENGE 2 - If you recall, the decision tree algorithm consists of finding
-# the best splitting point, splitting the data, and continuing from there until
-# you have perfectly separated the data. We have written the splitData function
-# for you, which takes in the dataset, an attribute index to split on, and a
-# value at which to split, and splits the dataset into two. Read through the
-# splitData function, and make sure you understand what it is doing. Ask a mentor
-# if you are unsure.
-
-
-# CHALLENGE 3 - The next step is to write the evaluateSplit function. Remember,
-# this is a weighted average of the impurities in both splits, weighted by
-# the fraction of the elements from the original data that is in each split.
-# In other words, return the split1 impurity times the split1 fraction, plus the
-# split2 impurity times the split2 fraction.
-
-
-# CHALLENGE 4 - Now the next step is to generate the best split. We do so by
-# trying every single splitting point, for every single attribute, and keeping
-# track of which results in the least impure splits. We have given the code for
-# evaluating the least impure of all aplits aloung the first attribute, the
-# simple moving average. Now, write the code to evaluate a better split (if one
-# exists) along the second attribute. HINT: most of the code should be the
-# same as the first attribute -- you just have to change the attribute index and
-# the attribute options.
-
-
-# CHALLENGE 5 - Finally, we are going to write the core logic of a decision tree
-# that differetiates it from a decision stump -- namely, the recursion. Fill in
-# createDecisionTreeRecursive. This function should take in a node. First, it
-# should check if that node's training data is fully pure (base case), and if
-# so, return. If not, it shoudl generate the best split along the training data,
-# set that split on the node to get its two split left and right children, and
-# then call itself recursively on the left and right children. Note that this
-# function down not have to return anything, since it mutably modifies the node
-# (ask a mentor if you are curious about what this means).
-#
 # NOTE: Make sure to keep the order of split1 and split2 the same -- don't mix
 # them up! Also, be sure to NOT call setSplit on a leaf node (i.e. a node with
 # perfect purity)!

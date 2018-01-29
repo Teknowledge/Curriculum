@@ -58,7 +58,7 @@ class Node(object):
 # this function takes in a filepath to the stock data, and returns a list of
 # 3-tuples representing the data.
 def loadDataFromFile(filepath):
-    with open(filepath, 'rb') as csvfile:
+    with open(filepath, 'rt') as csvfile:
         fileReader = csv.reader(csvfile)
         data = []
         for row in fileReader:
@@ -91,6 +91,7 @@ def testDecisionTree(decisionTree, testData):
         # Similar to getImpurity, calculate the upFraction and downFraction
         # from node.trainingData
         # Get the number of datapoints with up and down labels
+        ########################################################################
         upPoints, downPoints = 0, 0
         for nodeData in node.trainingData:
             if nodeData[2] == "UP":
@@ -181,7 +182,7 @@ def evaluateSplit(dataset, split1, split2):
 # generates the best split of the data. It returns the attributeIndex to split on,
 # the value of the split, and the two resulting lists after splitting along
 # that attributeIndex and value.
-def generateBestSplit(dataset):
+def getBestSplit(dataset):
     # Initialize variables to keep track of the best split we have seen so far
     minImpurity = None
     minAttributeIndex = None
@@ -190,8 +191,8 @@ def generateBestSplit(dataset):
     minSplit2 = None
     # First, try splitting along the first attribute (index 0)
     sortedDataset = sorted(dataset) # sort it so that every value except the max can be used as a splitting point
-    splitOptionsFirstAttribute = [sortedDataset[i][0] for i in range(len(dataset)-1)]
-    for value in splitOptionsFirstAttribute:
+    firstAttributeSplitOptions = [sortedDataset[i][0] for i in range(len(dataset)-1)]
+    for value in firstAttributeSplitOptions:
         split1, split2 = splitData(dataset, 0, value) # Remember, the first attribute is at index 0!!!
         impurity = evaluateSplit(dataset, split1, split2)
         if (minImpurity is None or impurity < minImpurity): # we found a better split!
@@ -202,8 +203,8 @@ def generateBestSplit(dataset):
             minSplit2 = split2
     # Next, write code to split along the second attribute (index 1)
     ############################################################################
-    splitOptionsSecondAttribute = ["UP", "DOWN"]
-    for value in splitOptionsSecondAttribute:
+    secondAttributeSplitOptions = ["UP", "DOWN"]
+    for value in secondAttributeSplitOptions:
         split1, split2 = splitData(dataset, 1, value) # Remember, the second attribute is at index 1!!!
         impurity = evaluateSplit(dataset, split1, split2)
         if (minImpurity is None or impurity < minImpurity): # we found a better split!
@@ -219,18 +220,18 @@ def generateBestSplit(dataset):
 # (base case). If not, it generates the best split of that training data,
 # sets that split for the node to get its new left and right children, and
 # calls itself recursively on the two children.
-def createDecisionTreeRecursive(node, currentDepth, maxDepth):
+def makeDecisionTreeRecursively(node, currentDepth, maxDepth):
     ############################################################################
     # Is this node finished yet or not?
     impurity = getImpurity(node.trainingData)
     if impurity == 0.0 or currentDepth == maxDepth:
         return 0 # this node is done
     # If this node is not yet finished
-    attributeIndex, value, split1, split2 = generateBestSplit(node.trainingData)
+    attributeIndex, value, split1, split2 = getBestSplit(node.trainingData)
     leftNode, rightNode = node.setSplit(attributeIndex, value, split1, split2)
     # Call this function recursively on the children
-    depth1 = createDecisionTreeRecursive(leftNode, currentDepth+1, maxDepth)
-    depth2 = createDecisionTreeRecursive(rightNode, currentDepth+1, maxDepth)
+    depth1 = makeDecisionTreeRecursively(leftNode, currentDepth+1, maxDepth)
+    depth2 = makeDecisionTreeRecursively(rightNode, currentDepth+1, maxDepth)
     return max(depth1+1, depth2+1) # this node is done
     ############################################################################
 
@@ -239,7 +240,7 @@ def createDecisionTreeRecursive(node, currentDepth, maxDepth):
 def createDecisionTree(trainingData):
     maxDepth = 175
     startingNode = Node(trainingData)
-    depth = createDecisionTreeRecursive(startingNode, 1, maxDepth)
+    depth = makeDecisionTreeRecursively(startingNode, 1, maxDepth)
     print("Depth: "+str(depth+1))
     return startingNode
 
@@ -255,117 +256,4 @@ accuracy = testDecisionTree(decisionTree, testData)
 print("Accuracy: "+str(accuracy))
 
 
-# CHALLENGE 0 - The first part of any problem that uses data is to understand
-# the dataset. Go to where we load the training data in this file (near the
-# end of the code), and print the trainingData. Make sure you understand
-# what the data is, and how to interact with it (ask a friend or mentor for
-# help if you are unsure).
 
-
-# CHALLENGE 1 - Next, write the getImpurity function. In this function, you
-# should first determine the number of points in the dataset with the
-# "UP" label, and the number of points with the "DOWN" label (be sure one to
-# get confused between yesterday's UP/DOWN labels, which are ar index 1, and
-# today's UP/DOWN labels, which are at index 2). Once you have the number of
-# points, calculate the fraction of points in the dataset that have the up label
-# and the down label. Finally, use that to calculate the impurity, using the Gini
-# Impurity measure we taught in class.
-
-
-# CHALLENGE 2 - If you recall, the decision tree algorithm consists of finding
-# the best splitting point, splitting the data, and continuing from there until
-# you have perfectly separated the data. We have written the splitData function
-# for you, which takes in the dataset, an attribute index to split on, and a
-# value at which to split, and splits the dataset into two. Read through the
-# splitData function, and make sure you understand what it is doing. Ask a mentor
-# if you are unsure.
-
-
-# CHALLENGE 3 - The next step is to write the evaluateSplit function. Remember,
-# this is a weighted average of the impurities in both splits, weighted by
-# the fraction of the elements from the original data that is in each split.
-# In other words, return the split1 impurity times the split1 fraction, plus the
-# split2 impurity times the split2 fraction.
-
-
-# CHALLENGE 4 - Now the next step is to generate the best split. We do so by
-# trying every single splitting point, for every single attribute, and keeping
-# track of which results in the least impure splits. We have given the code for
-# evaluating the least impure of all aplits aloung the first attribute, the
-# simple moving average. Now, write the code to evaluate a better split (if one
-# exists) along the second attribute. HINT: most of the code should be the
-# same as the first attribute -- you just have to change the attribute index and
-# the attribute options.
-
-
-# CHALLENGE 5 - Finally, we are going to write the core logic of a decision tree
-# that differetiates it from a decision stump -- namely, the recursion. Fill in
-# createDecisionTreeRecursive. This function should take in a node. First, it
-# should check if that node's training data is fully pure (base case), and if
-# so, return. If not, it shoudl generate the best split along the training data,
-# set that split on the node to get its two split left and right children, and
-# then call itself recursively on the left and right children. Note that this
-# function down not have to return anything, since it mutably modifies the node
-# (ask a mentor if you are curious about what this means).
-#
-# NOTE: Make sure to keep the order of split1 and split2 the same -- don't mix
-# them up! Also, be sure to NOT call setSplit on a leaf node (i.e. a node with
-# perfect purity)!
-
-
-# BONUS CHALLENGE - Every dataset will have some data that represents trends,
-# and other data that represents noise (random deviations in the dataset). A
-# good machine learning algorithm should learn the trends from the data, but
-# not the noise (because if the algorithm customizes itself to something that
-# was just due to random chance, then it won't perform as well on future data).
-# The act of learning something in the data that was actually due to randomness
-# and not a trend is called overfitting.
-#
-# Overfitting is a big problem with decision trees, since we keep growing the
-# tree until every single leaf contains a pure subset of the training data.
-# Therefore, we are bound to hardcode some of the noise into our decision tree.
-# One way to get around that is by limiting the depth of the decision tree.
-# Add two additional parameters to the recursive function, maxDepth and
-# currentDepth. Then, modify the recursive function so the tree stops growing
-# not only when the impurity is 0, but also when we have exceeded maxDepth.
-# In other words, you are modifying the base case of the recursive function.
-#
-# After modifying the recursive function, you also have to modify how we use the
-# decision tree to make predictions. Now, just being at a leaf does not guarentee
-# that we have one set label (since some leaves may contain UP and DOWN values).
-# Therefore, we have to modify the way we predict a label by looking at what
-# fraction of the data at that node is UP, what fraction is DOWN, and picking
-# a random label which is UP or DOWN that appropriate fraction of the time.
-# Make this modification in the testDecisionTree function.
-#
-# Lastly, modify the createDecisionTree function, where the recursive function
-# is called.
-#
-# Finally, test it out. Play around with different max depths and look at the
-# corresponding accuracy. What was the overall depth of the tree before this
-# change? Which depth has the best accuracy? What does that tell you about
-# overfitting?
-
-
-# COMPREHENSION QUESTIONS - think about these and/or discuss them
-# with a friend. We will discuss them at the end of class.
-#    - As you saw, the accuracy of our decision tree is around 50%. That is as
-#      bad as if we tossed a coin and predicted "UP"/"DOWN"! What does this
-#      tell you about making stock market predictions using historical data?
-#      Do you have any ideas for other data we could take into account to make
-#      a better predictor?
-#    - All of our training data came from 2016 and all of our test data came
-#      from 2017. What are the pros/cons of doing this?
-#    - When splitting along the first attribute (simple moving average), we try
-#      every possible split. However, the number of splits is very large
-#      (equivalent to the size of the training data minus one). Do you have any
-#      ideas for a faster way to evaluate splits, that may not get us the best
-#      split but will get us a good enough split (there are many options.
-#    - What if instead of each split being binary (i.e. yes or no), some had
-#      more options. For example, if instead of UP/DOWN for the second attrbute,
-#      we had UP/DOWN/SAME, then we may have to have 3-way splits. What parts of
-#      the code would we have to modify to account for this?
-#    - Decision trees in general  are useful in day-to-day life. Fundamentally,
-#      they are just a way of organizing cascading conditions (i.e. if I do X,
-#      then I will go down this rout of the tree). Think of ways in which
-#      decision trees might be useful in your life, or the lives of people you know.
