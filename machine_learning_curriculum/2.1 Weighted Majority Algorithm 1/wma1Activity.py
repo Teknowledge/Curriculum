@@ -145,7 +145,6 @@ print("All tests pass!")
 # preferences and see which friends align with your tastes! Each person can
 # take turns being the "Main Character"
 ############################################################################
-# Uncomment this line!
 run()
 
 
