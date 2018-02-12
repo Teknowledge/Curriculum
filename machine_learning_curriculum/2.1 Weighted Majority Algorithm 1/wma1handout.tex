@@ -1,0 +1,66 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{ dsfont }
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage[]{algorithm2e}
+
+\oddsidemargin-0.4cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+\noindent{\bf #1: #2} \vspace{0.5em}
+\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+ 
+\pagestyle{fancyplain}
+\chead{\fancyplain{}{Introduction to Machine Learning}}
+
+\begin{document}
+
+\medskip                        % Skip a "medium" amount of space
+                                % (latex determines what medium is)
+                                % Also try: \Bigskip, \littleskip
+
+\thispagestyle{plain}
+
+\begin{center}                  % Center the following lines
+{\Large Introduction to Machine Learning} \\
+Online Learning: Weighted Majority 1 \\
+February 13, 2017 \\
+\end{center}
+
+Today's activity will be done in groups of 3. Everyone should aim to finish the entire activity by the end of class today!
+
+\question{1}{Predicting for a new movie}
+
+Say that we have 2 experts, A and B. We have their weights in the model as well as what they think the correct prediction should be. Write pseudocode to get what the model should predict. Intuitively, this prediction represents "if you were to listen to your friends, would you watch this movie or not?
+
+\vspace{5.5cm}
+
+\question{2}{Updating the model}
+
+Now that we've made the prediction above, write pseudocode to update the model's weights for each of the experts according to how they performed on the prediction (i.e. were they correct?).
+
+\vspace{5.5cm}
+
+\question{3}{Write the code!}
+
+Open \texttt{wma1activity.py} and do challenges 1-4! Make sure to refer to your pseudocode. When you're done with the code, you'll be able to get movie predictions using your friends' recommendations!
+
+
+\end{document}
+

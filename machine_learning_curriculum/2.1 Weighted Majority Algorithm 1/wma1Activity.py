@@ -16,88 +16,156 @@
 #
 ################################################################################
 
+import random, math
+
 # This function takes in a string which represents a yes/no question, asks for
 # user input, and returns a boolean value indicating whether the use answers
 # yes or no.
 def getUserInput(prompt):
     print(prompt)
-    print("Answer Y/n: ")
+    print("Answer y/n: ")
     answer = input("> ")
     if (answer[0].lower() == "y"):
         return True
     else:
         return False
 
-# Two experts
-expert0Weight = 1.0
-expert1Weight = 1.0
+############################################################################
+# Challenge 0: Change the movieInputs list below to contain up to 10 movies that you 
+# and your friends all know.
+############################################################################
 
-# How much the expert weight gets reduced by per wrong prediction
-penalty = 0.5 # this has to be >= 0.5. Why?
-
-oldMovies = ["Zootopia",
+movieInputs = ["Zootopia",
              "Big Hero 6",
-             "Catching Fire",
+             "The Hunger Games: Catching Fire",
              "Star Wars: The Phantom Menace",
              "Harry Potter and the Deathly Hallows"]
 
-for movie in oldMovies:
-    # First, get expert predictions using the getUserInput function
-    expert0Label = getUserInput("Expert 0: Did you like " + movie + "?")
-    expert1Label = getUserInput("Expert 1: Did you like " + movie + "?")
+# Shuffle the list of movies.
+random.shuffle(movieInputs)
 
-    # Next, use the expert weights and expert labels to determine
-    # which label you will predict, True or False.
+def run(test=False):
+    # Initialize two "experts"
+    expert0Weight = 1.0
+    expert1Weight = 1.0
 
-    ############################################################################
-    # FILL THIS IN
-    ############################################################################
+    # How much the expert weight gets reduced by per wrong prediction
+    penalty = 0.5 
 
-    if (): # Fill this in
-        predictedLabel = True
-    else:
-        predictedLabel = False
+    for movie in movieInputs:
+        if test:
+            # Test mode
+            expert0Label = test[movie]["expert0Label"]
+            expert1Label = test[movie]["expert1Label"]
+            actualLabel = test[movie]["actualLabel"]
+        else:
+            # User input mode
+            expert0Label = getUserInput("Expert 0: Did you like " + movie + "?")
+            expert1Label = getUserInput("Expert 1: Did you like " + movie + "?")
+            actualLabel = getUserInput("Main Character: Did you like " + movie + "?")
 
-    # Get Main Character Input
-    actualLabel = getUserInput("Main Character: Did you like " + movie + "?")
-
-    # Lastly, for each expert that is wrong, reduce their weight by the
-    # penalty amount defined above.
-
-    ############################################################################
-    # FILL THIS IN
-    ############################################################################
-
-    # Uncomment this for debugging
-    # print("Expert 0 Weight: " + str(expert0Weight))
-    # print("Expert 1 Weight: " + str(expert1Weight))
-
-
-# Challenge 0: Change the oldMovies list to contain recent movies that you and
-# your friends know.
-
-
-# Challenge 1: The first step is to use the expert labels and weights to
-# determine which label to predict. In other words, you will take the weighted
-# sum of experts who say True and the weighted sum of experts who say False,
-# and predict the label corresponding to whichever is greater. Intuitively,
-# this prediction represents "if you were to listen to your friends, would you
-# watch this movie or not?"
+        trueWeight = 0.0
+        falseWeight = 0.0
+        # Get Expert Input
+        if (expert0Label == True):
+            trueWeight += expert0Weight
+        else:
+            falseWeight += expert0Weight
+        if (expert1Label == True):
+            trueWeight += expert1Weight
+        else:
+            falseWeight += expert1Weight
 
 
-# Challenge 2: After getting the actualLabel (which represents whether or not
-# you liked the movie), the next step is to adjust the expert weights based
-# on whether or not their label was accurate. In other words, for any expert
-# who made a suggestion that did not align with yours, lower their weight by
-# a factor of "penalty." For experts who suggested the same label as you,
-# keep their weight the same.
+        ############################################################################
+        # Challenge 1: The first step is to use the expert labels and weights to
+        # determine which label to predict (True or False). 
+        ############################################################################
+        
+        # Fill this conditional in to complete Challenge 1. You might want to create
+        # some new variables to compare first. 
+        if (trueWeight >= falseWeight): 
+            predictedLabel = True
+        else:
+            predictedLabel = False
 
 
-# Challenge 3: Now that all the code is in place, run it and debug it until it
-# works. It may help to uncomment the two lines that print the expert weights.
+        ############################################################################
+        # Challenge 2: Use the actualLabel variable (which represents whether or not
+        # you liked the movie), the next step is to adjust the expert weights based
+        # on whether or not their label was accurate.     
+        ############################################################################
+
+        if (expert0Label != actualLabel):
+            expert0Weight *= penalty
+        if (expert1Label != actualLabel):
+            expert1Weight *= penalty
 
 
-# Challenge 4: COMPREHENSION QUESTIONS -- think about them and/or discuss them
+        # Uncomment these lines for debugging 
+        # print("Expert 0 Weight: " + str(expert0Weight))
+        # print("Expert 1 Weight: " + str(expert1Weight))
+
+        if test:
+            assert(expert0Weight == test[movie]["expert0Weight"])
+            assert(expert1Weight == test[movie]["expert1Weight"])
+        else:
+            print("Model prediction: " + ("y" if str(predictedLabel) else "n"))
+            print("Expert 0 new weight: " + str(expert0Weight))
+            print("Expert 1 new weight: " + str(expert1Weight))
+            print("-"*88)
+
+
+############################################################################
+# Challenge 3: Now that all the code is in place, run these tests and try to
+# figure out why your code might be wrong (if it is).
+# It may help to uncomment the two lines that print the expert weights.
+############################################################################
+
+test1 = {}
+for i in range(len(movieInputs)):
+    test1[movieInputs[i]] = {}
+    test1[movieInputs[i]]["actualLabel"] = False
+    test1[movieInputs[i]]["expert0Label"] = False
+    test1[movieInputs[i]]["expert1Label"] = True
+    test1[movieInputs[i]]["expert0Weight"] = 1.0
+    test1[movieInputs[i]]["expert1Weight"] = 0.5**(i+1)
+run(test1)
+
+test2 = {}
+for i in range(len(movieInputs)):
+    test2[movieInputs[i]] = {}
+    test2[movieInputs[i]]["actualLabel"] = True
+    test2[movieInputs[i]]["expert0Label"] = False
+    test2[movieInputs[i]]["expert1Label"] = True
+    test2[movieInputs[i]]["expert0Weight"] = 0.5**(i+1)
+    test2[movieInputs[i]]["expert1Weight"] = 1.0
+run(test2)
+
+# Ask a mentor for help if you're stuck on debugging test 3!
+test3 = {}
+for i in range(len(movieInputs)):
+    test3[movieInputs[i]] = {}
+    test3[movieInputs[i]]["actualLabel"] = True
+    test3[movieInputs[i]]["expert0Label"] = (i%2 == 0)
+    test3[movieInputs[i]]["expert1Label"] = (i%2 == 1)
+    test3[movieInputs[i]]["expert0Weight"] = 0.5**(math.floor((i+1)/2))
+    test3[movieInputs[i]]["expert1Weight"] = 0.5**(math.floor((i+2)/2))
+run(test3)
+
+print("All tests pass!")
+
+############################################################################
+# Challenge 4: Now, run the code in user mode where you can input your actual
+# preferences and see which friends align with your tastes! Each person can
+# take turns being the "Main Character"
+############################################################################
+# Uncomment this line!
+run()
+
+
+############################################################################
+# Challenge 5: COMPREHENSION QUESTIONS -- think about them and/or discuss them
 # with a friend. We will discuss them at the end of class.
 #    - Do we ever use predictedLabel? What are example scenarios where
 #      predictedLabel is important?
@@ -113,3 +181,4 @@ for movie in oldMovies:
 #      What are some real-life scenarios where robots could use WMA? What
 #      about where computers and/or machine learning algorithms that are
 #      processing tons of data could use WMA?
+############################################################################

@@ -63,7 +63,7 @@ for movie in oldMovies:
         falseWeight += expert1Weight
     ############################################################################
 
-    if (falseWeight > trueWeight): # Fill this in
+    if (falseWeight < trueWeight): # Fill this in
         predictedLabel = True
     else:
         predictedLabel = False

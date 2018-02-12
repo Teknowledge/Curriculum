@@ -2,6 +2,26 @@ from decisionTreeActivity import getImpurity
 from decisionTreeActivity import evaluateSplit
 from decisionTreeActivity import getBestSplit
 
+''' 
+Here are some simple unit tests for the Decision Tree Activity.
+They're designed to make sure your code at each of the challenges is correct,
+which will help you debug your overall code!
+
+Instructions: Place this file in the same directory as your 
+decitionTreeActivity.py file. Then run it once you think you're done
+with an activity. 
+
+If you're completely done and your code is correct, you should see the
+file print "All tests passed!"
+
+Otherwise, you'll see some error code with an AssertionError. Look at the
+Traceback that's printed and look for something that looks like:
+  File "decisionTreeTests.py", line X, in <module>
+Look at line X in this file and try to see why your code fails for this case!
+
+'''
+
+
 # Unit tests for Challenge 2
 
 assert(getImpurity([(0,'','UP')]) == 0.0)
