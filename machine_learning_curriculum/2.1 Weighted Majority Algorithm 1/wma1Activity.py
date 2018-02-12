@@ -64,24 +64,13 @@ def run(test=False):
             expert1Label = getUserInput("Expert 1: Did you like " + movie + "?")
             actualLabel = getUserInput("Main Character: Did you like " + movie + "?")
 
-        trueWeight = 0.0
-        falseWeight = 0.0
-        # Get Expert Input
-        if (expert0Label == True):
-            trueWeight += expert0Weight
-        else:
-            falseWeight += expert0Weight
-        if (expert1Label == True):
-            trueWeight += expert1Weight
-        else:
-            falseWeight += expert1Weight
-
-
         ############################################################################
         # Challenge 1: The first step is to use the expert labels and weights to
         # determine which label to predict (True or False). 
         ############################################################################
-        
+       
+        # Write your code here!
+
         # Fill this conditional in to complete Challenge 1. You might want to create
         # some new variables to compare first. 
         if (trueWeight >= falseWeight): 
@@ -96,11 +85,7 @@ def run(test=False):
         # on whether or not their label was accurate.     
         ############################################################################
 
-        if (expert0Label != actualLabel):
-            expert0Weight *= penalty
-        if (expert1Label != actualLabel):
-            expert1Weight *= penalty
-
+        # Write your code here!
 
         # Uncomment these lines for debugging 
         # print("Expert 0 Weight: " + str(expert0Weight))
