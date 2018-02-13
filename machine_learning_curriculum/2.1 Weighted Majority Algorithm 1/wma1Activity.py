@@ -71,8 +71,8 @@ def run(test=False):
        
         # Write your code here!
 
-        # Fill this conditional in to complete Challenge 1. You might want to create
-        # some new variables to compare first. 
+        # These lines contain variables that haven't been initialized.  
+        # You might want to initialize them to elsewhere in the program. 
         if (trueWeight >= falseWeight): 
             predictedLabel = True
         else:
