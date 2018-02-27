@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 
 # Takes in a city name and imports the corresponding data file
 def getCityData(cityName):
-    prefix = "/Users/amal/Documents/Teknowledge/Curriculum/machine_learning_curriculum/weatherDatasetByDays/"
+    prefix = "./weatherDatasetByDays/"
     suffix = ".txt"
     filename = prefix + cityName + suffix
     with open(filename, 'r') as f:
