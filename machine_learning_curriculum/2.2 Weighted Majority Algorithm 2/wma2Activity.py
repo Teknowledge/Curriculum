@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 
 # Takes in a city name and imports the corresponding data file
 def getCityData(cityName):
-    prefix = "/Users/amal/Documents/Teknowledge/Curriculum/machine_learning_curriculum/weatherDatasetByDays/"
+    prefix = "/Users/stephentsou/Desktop/wma2HW/weatherDatasetByDays/"   ###Challenge 0  ##### Change the directory
     suffix = ".txt"
     filename = prefix + cityName + suffix
     with open(filename, 'r') as f:
@@ -38,7 +38,11 @@ expertCityData = {city : getCityData(city) for city in expertCities}
 
 # Initialize expert weights here, as a dictionary that maps from city name to
 # the initial expert weight.
-expertWeights = {} # FILL THIS IN
+
+
+#######################
+expertWeights = {} ####### FILL THIS IN   ######   CHALLENGE #1  Initialize the Weights in a Dictionary #########
+#######################
 
 # Weather Labels
 # 0 - Sunny
@@ -53,31 +57,35 @@ penalty = 0.5 # This can be any value between 0.0 and 1.0
 for day in range(len(myCityData)):
     # Initialize the variables that will store expert predictions and the
     # overall weight assigned to each weather
-    expertPredictions = {} # FILL THIS IN
-    weatherCount = {} # FILL THIS IN
+    expertPredictions = {} # FILL THIS IN  CHALLENGE # 2  Initialize expertPrediction dictionary with None Values
+    weatherCount = {} # FILL THIS IN  CHALLENGE # 2 Initialize weatherCount dictionary with 0.0 values
     # Iterate over every expert, and get their prediction (the weather in that
     # city on the specific day)
     for expertCityName in expertCities:
         ########################################################################
-        # FILL THIS IN
+        # FILL THIS IN  ########  CHALLENGE #2  #########
+        # Get Predictions For the Day, Add it to the expertPredictions and add weight of the expert for that
+        # prediction in weatherCount
+        #
+        #
         ########################################################################
 
-    # Find the weather label that had the max count in "weatherCount"
+    # Find the weather label that had the max count and the max count in "weatherCount"  below
     ############################################################################
-    # FILL THIS IN
+    # FILL THIS IN        #######   CHALLENGE #3
     ############################################################################
-    predictedWeather = None # Set this to the weather label that had the max count
+    predictedWeather = None ########    CHALLENGE # 3 ######## Set this to the weather label that had the max count
 
     # Get the actual weather
     actualWeather = myCityData[day]
 
     # Re-weight the experts
     ############################################################################
-    # FILL THIS IN
+    # FILL THIS IN   #########       CHALLENGE #4   Reweight the Cities   #########
     ############################################################################
 
 ################################################################################
-# FILL THIS IN
+# FILL THIS IN     #########     CHALLENGE #5  Print All Cities And Their Weights      ##########
 ################################################################################
 
 ################################################################################
