@@ -39,12 +39,11 @@ def run(testData=None):
     # Note that expertCityData is a dictionary, where the key is a city name and
     # the value is a list (of size 365) of the average weather on that day
     if testData is None:
+        global expertCities
+        global myCityData
         expertCityData = {city : getCityData(city) for city in expertCities}
-        expertCities = expertCities
-        myCityData = myCityData
     else:
         expertCityData = testData["expertCityData"]
-        expertCities = testData["expertCities"]
         myCityData = testData["myCityData"]
 
     #################################################################################
@@ -170,7 +169,7 @@ testData["expWeight"] = [
         ]
 testData["expPrediction"] = [0, 2, 1]
 print ("Running test 1")
-run(testData)
+# run(testData)
 
 
 # Test 2: Summing weights
@@ -185,7 +184,7 @@ testData["expWeight"] = [
         ]
 testData["expPrediction"] = [0, 1, 2]
 print ("Running test 2")
-run(testData)
+# run(testData)
 
 
 print("All tests pass!")
@@ -198,7 +197,7 @@ print("All tests pass!")
 # Then, change myCityName from Pittsburgh to a different city from the expertCity
 # list (and put Pittsburgh into the expertCity list). See what changes!
 
-# run()
+run()
 
 ################################################################################
 

@@ -16,6 +16,7 @@
 
 from math import *
 from random import *
+import knnTests
 
 # This code retrives the data from the data.txt file
 ############ Training and Test Set ####################
@@ -61,10 +62,12 @@ def getNeighbors(trainingSet, testInstance, k):
     distances.sort()
     neighbors = []
     # Here we would like to return only the k closest training instances. 
-    # So we will be appending the top 3 distances 
+    # So we will be appending the top k distances 
     for index in range(k):
         neighbors.append(distances[index][1])
     return neighbors
+
+knnTests.testGetNeighbors(getNeighbors)
 
 # Helper function for sorting the votes in a dictionary
 def reverseSort(votes):
@@ -90,6 +93,8 @@ def getLabel(neighbors):
     newLabel = sortVotes(typeVotes)
     return newLabel
 
+knnTests.testGetLabel(getLabel)
+
 # Returns the accuracy of our testSet at determining whether a star will
 # supernova.
 def knnMain(trainingSet, testSet, k):
@@ -107,10 +112,12 @@ def knnMain(trainingSet, testSet, k):
     accuracy = (correct/total)*100
     return accuracy
 
+knnTests.testKnnMain(knnMain)
 
 # Returns Accuracy
-k = 3
-print(knnMain(trainingSet, testSet, k))
+print(knnMain(trainingSet, testSet, 1))
+print(knnMain(trainingSet, testSet, 2))
+print(knnMain(trainingSet, testSet, 3))
 
 # Challenge 0: Run the code and print out the testSet and trainingSet a few 
 # times. Notice how the data is set up: 
