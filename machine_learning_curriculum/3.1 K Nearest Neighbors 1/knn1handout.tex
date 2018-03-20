@@ -1,0 +1,81 @@
+% You should title the file with a .tex extension (hw1.tex, for example)
+\documentclass[11pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{ dsfont }
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage[]{algorithm2e}
+
+\oddsidemargin-0.4cm
+\topmargin-2cm     %I recommend adding these three lines to increase the 
+\textwidth16.5cm   %amount of usable space on the page (and save trees)
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+\noindent{\bf #1: #2} \vspace{0.5em}
+\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+ 
+\pagestyle{fancyplain}
+\chead{\fancyplain{}{Introduction to Machine Learning}}
+
+\begin{document}
+
+\medskip                        % Skip a "medium" amount of space
+                                % (latex determines what medium is)
+                                % Also try: \Bigskip, \littleskip
+
+\thispagestyle{plain}
+
+\begin{center}                  % Center the following lines
+{\Large Introduction to Machine Learning} \\
+$K$-Nearest Neighbors Classification \\
+March 20, 2018 \\
+\end{center}
+
+Today's activity will be done in groups of 2. The coding activity will be less structured than usual, so you'll have to rely a little more heavily on the pseudocode you write here!
+
+\question{1}{Getting the $k$ nearest neighbors}
+
+An ``instance'' of a star looks like this: \verb|[ageOfStarAtDeath, tempOfStarAtDeath, isSuperNova?]|
+
+You're given a list of training instances (the ``training set") and one test instance, as well as a value $k$. Write pseudocode for the function \verb|getNeighbors| that takes these inputs and returns a list of the $k$ nearest training instances to the test instance. Some remarks that will be useful:
+\begin{enumerate}
+\item You can use a function \verb|distance(a,b)| that takes $a = (x_0,y_0)$ and $b = (x_1,y_1)$ and returns $dist(a,b)$.
+\item We treat each star as a point on the Cartesian plane (i.e. $x$ = age of star at death, $y$ = temp of star at death).
+\item If we sort a 2D list in Python, it will sort by the first element of each inner list. For example: \verb|sorted|($\big[[1,0],[0,1]\big]$) == $\big[[0,1],[1,0]\big]$ 
+\end{enumerate}
+
+
+\pagebreak
+
+\question{2}{Getting the prediction}
+
+Now that we have the $k$ nearest neighbors from above, write pseudocode to for the function \verb|getLabel| that gets the model's prediction on a test instance (i.e. the majority ``vote'' of the nearest neighbors to the instance). In this case, remember that there are only two possible classifications.
+
+\vspace{6cm}
+
+\question{3}{Test set performance}
+
+Using the functions \verb|getNeighbors| and \verb|getLabel|, get the accuracy of a kNN model on a list of test instances (the ``test set"). The model's predictions depend on a training set and a given value of $k$. 
+
+
+\vspace{6cm}
+
+\question{4}{Write the code!}
+
+Open \texttt{knnActivity.py} and do challenges 0-4! Make sure to refer to your pseudocode. 
+
+
+\end{document}
+

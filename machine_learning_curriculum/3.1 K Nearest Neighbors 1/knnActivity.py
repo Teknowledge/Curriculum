@@ -108,30 +108,23 @@ def getNeighbors(trainingSet, testInstance, k):
 ################################################################################
 # Challenge 2: The next step is to complete the getLabel function. In this 
 # function we are iterating through the returned neighbors, and getting the 
-# True or False label and adding that label to our dictionaries.
+# True or False label and adding that label to our counts.
 ################################################################################
 
 # Returns True if the majority of |neighbors| are supernovae, False otherwise
 def getLabel(neighbors):
-    votes = {True: 0, False: 0}
 
     ###########################################################################
-    # Challenge 2.1: Fill in the |votes| dict using the parameter |neighbors|
     # YOUR CODE HERE:
 
 
-    ###########################################################################
-
-    ###########################################################################
-    # Challenge 2.2: Return the maximum of the |votes| (True or False)
-    # YOUR CODE HERE:
 
 
     pass # Delete this line when you're finished with challenge 2.2
     ###########################################################################
 
 ################################################################################
-# Challenge 2.3: Run the tests for getLabel by uncommenting the line below
+# Challenge 2.1: Run the tests for getLabel by uncommenting the line below
 
 # knnTests.testGetLabel(getLabel)
 
@@ -142,8 +135,8 @@ def getLabel(neighbors):
 ###############################################################################
 # Challenge 3: The last step is to iterate through the test set in the knnMain
 # function. First gather your neighbors using the getNeighbors helper function.
-# Then, get the label, using the getLabel helper function. Then check whether 
-# the label retrieved matches the actual label and increment correct 
+# Then, get the label using the getLabel helper function. Then check whether 
+# the label retrieved matches the actual label and increment |correct|
 # accordingly.
 ###############################################################################
 
@@ -154,8 +147,8 @@ def knnMain(trainingSet, testSet, k):
     accuracy = 0
 
     ###########################################################################
-    # Challenge 3.1: Get our prediction and then return the accuracy over the 
-    # testSet.
+    # Challenge 3.1: For each instance in |testSet|, get our prediction and then 
+    # update the test set accuracy.
     # YOUR CODE HERE:
 
 
