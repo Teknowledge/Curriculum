@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Week2_IndividualLab</string>
+    <string name="et_hint">Add Item...</string>
+    <string name="btn_add">Add</string>
+    <string name="edit_item_title">Edit Item</string>
+    <string name="btn_save">Save</string>
+</resources>
