@@ -37,7 +37,7 @@ class Database(object):
     def __init__(self):
         self.database = []
         filepath = "adultTestData.csv"
-        with open(filepath, 'rb') as csvfile:
+        with open(filepath, 'rt') as csvfile:
             spamreader = csv.reader(csvfile)
             for row in spamreader:
                 if len(row) < 14: break
