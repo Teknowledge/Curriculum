@@ -72,7 +72,7 @@ def getNeighbors(trainingSet, testInstance, k):
     # Gather the x, y points of the test instance, and initialize the lists
     # of distances.
     distances = []
-    x0, y0 = testInstance
+    x0, y0 = testInstance[:2]
 
     ########################################################################
     # Challenge 1.1: Fill the |distances| list. Hint: use the distance 
